@@ -14,8 +14,37 @@ class CategoryRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => 'required|max:15',
-            'description' => 'nullable|max:50',
+            'title' => [
+                'required',
+                'max:15',
+                function ($attribute, $value, $fail) {
+                    if (!$this->validStr('йцукенгшщзхъфывапролджэячсмитьбюё -', $value)) {
+                        $fail('Ошибка');
+                    }
+                },
+            ],
+            'description' => [
+                'nullable',
+                'max:50',
+                function ($attribute, $value, $fail) {
+                    if (!$this->validStr('йцукенгшщзхъфывапролджэячсмитьбюё -.,:;', $value)) {
+                        $fail('Ошибка');
+                    }
+                },
+            ],
         ];
+    }
+
+    public function validStr($validSymbols, $str)
+    {
+        $arr = str_split(mb_strtolower($str));
+
+        foreach ($arr as $k => $v) {
+            if (mb_strpos($validSymbols, $v) === false) {
+                return false;
+            }
+        }
+
+        return true;
     }
 }
