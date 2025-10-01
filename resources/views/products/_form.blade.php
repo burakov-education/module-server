@@ -19,7 +19,8 @@ $product = $product ?? null;
 </div>
 <div class="mb-5">
     <label for="productImages" class="form-label">Image(s)</label>
-    <input type="file" class="form-control @error('images') is-invalid @enderror" id="productImages" name="images">
+    <p><small>Первое изображение, которое вы выберете, будет являться изображением по умолчанию</small></p>
+    <input type="file" class="form-control @error('images') is-invalid @enderror" id="productImages" name="images[]" multiple>
     @error('images') <div class="invalid-feedback fs-3">{{ $message }}</div> @enderror
     <div id="fileCounter" class="form-text"></div>
 </div>

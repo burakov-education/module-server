@@ -42,10 +42,5 @@
                 </tbody>
             </table>
         </div>
-
-        @php
-        /** @var \Illuminate\Pagination\LengthAwarePaginator $products */
-        @endphp
-        {{ $products->links() }}
     </div>
 @endsection

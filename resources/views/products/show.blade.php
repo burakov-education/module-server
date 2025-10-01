@@ -9,11 +9,9 @@
             </div>
             <div class="card-body d-flex justify-content-between flex-wrap">
                 <div class="card-img d-flex justify-content-evenly flex-wrap">
-                    <img src="assets/img/default.jpg" class="card-img-good" alt="Название товара">
-                    <img src="assets/img/default.jpg" class="card-img-good" alt="Название товара">
-                    <img src="assets/img/default.jpg" class="card-img-good" alt="Название товара">
-                    <img src="assets/img/default.jpg" class="card-img-good" alt="Название товара">
-                    <img src="assets/img/default.jpg" class="card-img-good" alt="Название товара">
+                    @foreach($product->image_urls as $imageUrl)
+                        <img src="{{ $imageUrl }}" class="card-img-good" alt="Название товара">
+                    @endforeach
                 </div>
                 <div class="card-info">
                     <p class="card-text text-black-50"><span class="text-dark">About: </span>{{ $product->description }}</p>

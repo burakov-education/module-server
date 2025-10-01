@@ -17,7 +17,8 @@ class ProductRequest extends FormRequest
             'name' => 'required|max:20',
             'description' => 'nullable|max:50',
             'price' => 'required|numeric|min:10',
-            'images' => 'nullable|array',
+            'images' => ($this->product ? 'nullable' : 'required') . '|array|min:1|max:5',
+            'images.*' => 'image|mimes:jpeg,png,jpg|max:' . (1024 * 3.5),
         ];
     }
 }

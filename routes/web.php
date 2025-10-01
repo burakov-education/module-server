@@ -26,5 +26,7 @@ Route::prefix('admin')->group(function () {
         Route::get('/products/{product}/edit', [ProductController::class, 'edit'])->name('products.edit');
         Route::post('/products/{product}/edit', [ProductController::class, 'update'])->name('products.update');
         Route::get('/products/{product}/destroy', [ProductController::class, 'destroy'])->name('products.destroy');
+
+        Route::get('/products', [ProductController::class, 'list'])->name('products.list');
     });
 });

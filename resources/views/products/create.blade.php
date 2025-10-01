@@ -7,7 +7,7 @@
                 <div class="card-body">
                     <h2 class="text-center mb-4 fs-1">Add good</h2>
 
-                    <form action="{{ route('products.store', $category) }}" method="post" id="addGood">
+                    <form action="{{ route('products.store', $category) }}" method="post" id="addGood" enctype="multipart/form-data">
                         @csrf
 
                         @include('products._form')

@@ -16,7 +16,7 @@
     <nav class="mt-3 d-flex justify-content-between fs-2">
         @auth
             <a href="{{ route('admin-panel') }}" class="text-primary text-decoration-none">Category</a>
-            <a href="index.html" class="text-primary text-decoration-none">Goods</a>
+            <a href="{{ route('products.list') }}" class="text-primary text-decoration-none">Goods</a>
             <a href="orders.html" class="text-primary text-decoration-none">Orders</a>
 
             <div>
