@@ -70,3 +70,7 @@ a.login:hover {
 .card-img-good {
     width: 250px;
 }
+
+[role="navigation"] .hidden {
+    display: none;
+}

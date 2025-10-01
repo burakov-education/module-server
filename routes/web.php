@@ -20,5 +20,11 @@ Route::prefix('admin')->group(function () {
         Route::get('/categories/{category}/destroy', [CategoryController::class, 'destroy'])->name('categories.destroy');
 
         Route::get('/categories/{category}/products', [ProductController::class, 'index'])->name('products.index');
+        Route::get('/categories/{category}/products/create', [ProductController::class, 'create'])->name('products.create');
+        Route::post('/categories/{category}/products/create', [ProductController::class, 'store'])->name('products.store');
+        Route::get('/products/{product}', [ProductController::class, 'show'])->name('products.show');
+        Route::get('/products/{product}/edit', [ProductController::class, 'edit'])->name('products.edit');
+        Route::post('/products/{product}/edit', [ProductController::class, 'update'])->name('products.update');
+        Route::get('/products/{product}/destroy', [ProductController::class, 'destroy'])->name('products.destroy');
     });
 });
