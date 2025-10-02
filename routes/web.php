@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\Panel\AuthController;
 use App\Http\Controllers\Panel\CategoryController;
+use App\Http\Controllers\Panel\OrderController;
 use App\Http\Controllers\Panel\ProductController;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('admin')->group(function () {
@@ -28,5 +30,6 @@ Route::prefix('admin')->group(function () {
         Route::get('/products/{product}/destroy', [ProductController::class, 'destroy'])->name('products.destroy');
 
         Route::get('/products', [ProductController::class, 'list'])->name('products.list');
+        Route::get('/orders', OrderController::class)->name('orders');
     });
 });

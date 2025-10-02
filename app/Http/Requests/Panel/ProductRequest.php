@@ -16,7 +16,7 @@ class ProductRequest extends FormRequest
         return [
             'name' => 'required|max:20',
             'description' => 'nullable|max:50',
-            'price' => 'required|float|min:10',
+            'price' => 'required|numeric|min:10',
             'images' => ($this->product ? 'nullable' : 'required') . '|array|min:1|max:5',
             'images.*' => 'image|mimes:jpeg,png,jpg|max:' . (1024 * 3.5),
         ];

@@ -17,7 +17,7 @@
         @auth
             <a href="{{ route('admin-panel') }}" class="text-primary text-decoration-none">Category</a>
             <a href="{{ route('products.list') }}" class="text-primary text-decoration-none">Goods</a>
-            <a href="orders.html" class="text-primary text-decoration-none">Orders</a>
+            <a href="{{ route('orders') }}" class="text-primary text-decoration-none">Orders</a>
 
             <div>
                 <a href="{{ route('logout') }}" class="login text-decoration-none">Logout</a>
